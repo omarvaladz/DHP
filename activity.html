@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlowerZ - Actividad</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/meditation.css">
+    <link rel="icon" type="image/x-icon" href="img/Logo_Black.ico">
+    <link rel="stylesheet" href="lightbox2/css/lightbox.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            background-image: url('img/grogu.gif');
+            background-size: cover;
+            background-repeat: no-repeat;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="index.html">
+            <img src="img/Logo_Gray.png" alt="Logo" width="50" height="50">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="intro.html">Introducción</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="test.html">Evaluación</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="intro">
+        <div>
+            <h1>Find your Force with 𝘚𝘵𝘢𝘳 𝘞𝘢𝘳𝘴™</h1>
+        </div>
+    </section>
+
+    <section id="video-selection">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a href="#" onclick="changeVideo('video/C1.mp4', 'Chapter I: 𝘔𝘪𝘭𝘭𝘦𝘯𝘯𝘪𝘶𝘮 𝘍𝘢𝘭𝘤𝘰𝘯™ Meltdown')">
+                        <img src="img/C1.jpg" alt="Imagen 1">
+                        <p>Chapter I: 𝘔𝘪𝘭𝘭𝘦𝘯𝘯𝘪𝘶𝘮 𝘍𝘢𝘭𝘤𝘰𝘯™ Meltdown</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" onclick="changeVideo('video/C2.mp4', 'Chapter II: Breathe to the Light Side')">
+                        <img src="img/C2.jpg" alt="Imagen 2">
+                        <p>Chapter II: Breathe to the Light Side</p>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="#" onclick="changeVideo('video/C3.mp4', 'Chapter III: Sweet Tatooine™ Dreams')">
+                        <img src="img/C3.jpg" alt="Imagen 3">
+                        <p>Chapter III: Sweet Tatooine™ Dreams</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="video-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <iframe id="youtube-player" width="100%" height="315" src="" frameborder="0" allowfullscreen></iframe>
+                    <p id="video-description"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>Autor</h3>
+                    <p>Nombre: Omar Valadez Flores</p>
+                    <p>Correo electrónico: ovaladez03@alumnos.uaq.mx</p>
+                    <p>No. Expediente: 292643</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Datos sobre el Autor</h3>
+                    <a href="fyi.html" class="interest-icon"><i class="fas fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="scripts/activity.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="lightbox2/js/lightbox.min.js"></script>
+</body>
+
+</html>
