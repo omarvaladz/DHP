@@ -17,8 +17,8 @@ body {
 
 .navbar-brand{
     display: flex;
-    justify-content: center; /* Horizontally center */
-    align-items: center; /* Vertically center */
+    justify-content: center;
+    align-items: center;
 }
 
 .navbar-brand img {
@@ -41,8 +41,8 @@ body {
 .card {
     display: flex;
     background-color: darkslategray;
-    margin-bottom: 30px; /* Add spacing between cards */
-    overflow: hidden; /* Hide any overflowing content */
+    margin-bottom: 30px;
+    overflow: hidden;
     border-radius: 30px;
     font-size: 20px;
 }
@@ -102,7 +102,7 @@ body {
     align-content: center;
     width: 100vw;
     height: 68%;
-    background-color: rgba(0, 0, 0, 0.8); /* Dark grey label color */
+    background-color: rgba(0, 0, 0, 0.8);
     opacity: 85%;
     top: 0;
     left: 50%;
@@ -266,14 +266,14 @@ body {
     background-color: #c3e6cb;
     border: 1px solid #28a745;
     color: #28a745;
-    pointer-events: none; /* Evita que se pueda arrastrar nuevamente */
+    pointer-events: none;
 }
 
 .description.correct {
     background-color: #c3e6cb;
     border: 1px solid #28a745;
     color: #28a745;
-    pointer-events: none; /* Evita que se pueda soltar nuevamente */
+    pointer-events: none;
 }
 
 .description {
@@ -289,7 +289,7 @@ body {
 }
 
 .concept.used {
-    background-color: lightsteelblue; /* Cambia este color a lo que desees */
+    background-color: lightsteelblue;
 }
 
 #attempts{
@@ -300,7 +300,6 @@ body {
     font-weight: bold;
 }
 
-/* Ajusta los estilos según tus preferencias */
 .card {
     border: 1px solid #ccc;
 }
@@ -309,7 +308,6 @@ body {
     background-color: #f2f2f2;
 }
 
-/* Cambia los estilos de acuerdo a tus preferencias */
 li{
     list-style: none;
     color: white;
@@ -359,7 +357,6 @@ button{
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 90%;
     top: 0;
     left: 50%;
@@ -375,7 +372,7 @@ button{
 }
 
 .columna {
-    margin: 1px; /* Espacio entre columnas */
+    margin: 1px;
 }
 
 .imagen {
@@ -402,7 +399,6 @@ button{
     margin-bottom: 6px;
 }
 
-/* Estilos para el formulario de evaluación */
 #evaluation {
     background-color: #fff;
     padding: 20px;
@@ -428,12 +424,10 @@ button{
 
 #intro {
     position: relative;
-    /* Change position to relative */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 50px 0;
-    /* Adjust padding as needed */
     color: white;
     text-align: center;
     align-items: center;
@@ -452,7 +446,6 @@ button{
     width: 100vw;
     height: 90%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 85%;
     top: 0;
     left: 50%;

@@ -1,39 +1,124 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const quizForm = document.getElementById('quizForm');
-    const quizResult = document.getElementById('quizResult');
+document.addEventListener("DOMContentLoaded", () => {
+    const conceptsContainer = document.querySelector(".concepts");
+    const descriptionsContainer = document.querySelector(".descriptions");
+    const checkButton = document.getElementById("checkButton");
+    const scoreElement = document.getElementById("score");
+    const attemptsElement = document.getElementById("attempts");
 
-    quizForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        const answers = [];
+    let dragEnabled = true;
 
-        for (let i = 1; i <= 8; i++) {
-            const selectedAnswer = document.querySelector(`input[name="q${i}"]:checked`);
-            if (selectedAnswer) {
-                answers.push(selectedAnswer.value);
-            }
-        }
+    const correctAnswers = {
+        "Habilidades del Pensamiento": "Capacidades mentales que nos permiten procesar información, resolver problemas y tomar decisiones de manera efectiva.",
+        "Pensamiento Crítico": "Evaluar información de manera objetiva.",
+        "Creatividad": "Enfrentar situaciones de manera innovadora.",
+        "Metacognición": "Conocer y controlar nuestros procesos mentales.",
+        "Desarrollo personal": "Meditación y Mindfulness.",
+        "Aula": "Aprendizaje Colaborativo."
+    };
 
-        const score = calculateScore(answers);
+    const shuffledConcepts = Object.keys(correctAnswers).sort(() => Math.random() - 0.5);
+    const shuffledDescriptions = Object.values(correctAnswers).sort(() => Math.random() - 0.5);
 
-        showResult(score);
+    let score = 0;
+    let attempts = 1;
+
+    function createConceptsAndDescriptions() {
+        conceptsContainer.innerHTML = "";
+        descriptionsContainer.innerHTML = "";
+
+        shuffledConcepts.forEach(concept => {
+            const conceptElement = document.createElement("div");
+            conceptElement.classList.add("concept");
+            conceptElement.dataset.concept = concept;
+            conceptElement.draggable = true;
+            conceptElement.textContent = concept;
+            conceptsContainer.appendChild(conceptElement);
+        });
+
+        shuffledDescriptions.forEach(description => {
+            const descriptionElement = document.createElement("div");
+            descriptionElement.classList.add("description");
+            descriptionElement.dataset.correct = description;
+            descriptionElement.textContent = description;
+            descriptionsContainer.appendChild(descriptionElement);
+        });
+    }
+
+    createConceptsAndDescriptions();
+
+    conceptsContainer.addEventListener("dragstart", (event) => {
+        event.dataTransfer.setData("text/plain", event.target.dataset.concept);
     });
 
-    function calculateScore(answers) {
-        // Puedes personalizar la lógica de puntuación aquí.
-        // Asigna puntos según las respuestas correctas.
-        const correctAnswers = ["compensacion", "limites", "desplazamiento", "compensacion", "erosion", "escalada", "exito", "tragedia"];
-        let score = 0;
+    descriptionsContainer.addEventListener("dragover", (event) => {
+        event.preventDefault();
+    });
 
-        for (let i = 0; i < answers.length; i++) {
-            if (answers[i] === correctAnswers[i]) {
-                score++;
-            }
+    descriptionsContainer.addEventListener("drop", (event) => {
+
+        if (!dragEnabled) {
+            return;
         }
 
-        return score;
+        event.preventDefault();
+        const droppedConcept = event.dataTransfer.getData("text/plain");
+        const descriptionElement = event.target;
+
+        if (descriptionElement.classList.contains("description") && !descriptionElement.classList.contains("answered")) {
+            const conceptElement = conceptsContainer.querySelector(`.concept:not(.used)[data-concept="${droppedConcept}"]`);
+
+            if (conceptElement) {
+                descriptionElement.classList.add("answered");
+
+                if (descriptionElement.dataset.correct === correctAnswers[droppedConcept]) {
+                    descriptionElement.style.backgroundColor = "#c3e6cb";
+                    conceptElement.style.backgroundColor = "#c3e6cb";
+                    conceptElement.classList.add("correct");
+                    score++;
+                } else {
+                    descriptionElement.style.backgroundColor = "#f8d7da";
+                    conceptElement.style.backgroundColor = "#f8d7da";
+                    conceptElement.classList.add("incorrect");
+                }
+
+                conceptElement.classList.add("used");
+                conceptElement.draggable = false;
+                checkScore();
+            }
+        }
+    });
+
+    function checkScore() {
+        scoreElement.textContent = `Puntuación: ${score} / ${shuffledConcepts.length}`;
+
+        if (score >= 6) {
+            scoreElement.textContent += " (Aprobado)";
+        } else {
+            scoreElement.textContent += " (Reprobado)";
+        }
     }
 
-    function showResult(score) {
-        quizResult.innerHTML = `Tu puntuación es: ${score} de 8`;
+    checkButton.addEventListener("click", () => {
+        if (attempts > 0) {
+            attempts--;
+            attemptsElement.textContent = `Intentos restantes: ${attempts}`;
+
+            if (attempts === 0) {
+                checkButton.disabled = true;
+                attemptsElement.textContent = "¡Intentos agotados!";
+                dragEnabled = false;
+            }
+        }
+    });
+
+    function resetGame() {
+        score = 0;
+        attempts = 1;
+        scoreElement.textContent = "Puntuación: 0 / " + shuffledConcepts.length;
+        attemptsElement.textContent = "Intentos restantes: " + attempts;
+        checkButton.disabled = false;
+        createConceptsAndDescriptions();
     }
+
+    resetGame();
 });

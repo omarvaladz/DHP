@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FlowerZ - Test Arquetipos</title>
+    <title>FlowerZ - Test DHP</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/fyiStyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
@@ -47,63 +47,30 @@
         </div>
     </section>
 
-    <section id="cuestionario">
-        <div class="container">
-            <h1>Cuestionario sobre Arquetipos</h1>
-            <form id="quizForm">
-                <div class="question">
-                    <p>1. ¿Qué arquetipo se relaciona con una empresa que acelera el proceso de fabricación para cumplir con un plazo ajustado, disminuyendo la calidad del producto?</p>
-                    <input type="radio" name="q1" value="compensacion"> Compensación entre proceso y demora
-                    <input type="radio" name="q1" value="limites"> Límites del crecimiento
-                    <input type="radio" name="q1" value="desplazamiento"> Desplazamiento de la carga
-                </div>
-                <div class="question">
-                    <p>2. ¿Qué arquetipo se relaciona con una ciudad que experimenta un rápido crecimiento de la población sin la infraestructura adecuada?</p>
-                    <input type="radio" name="q2" value="compensacion"> Compensación entre proceso y demora
-                    <input type="radio" name="q2" value="limites"> Límites del crecimiento
-                    <input type="radio" name="q2" value="desplazamiento"> Desplazamiento de la carga
-                </div>
-                <div class="question">
-                    <p>3. ¿Qué arquetipo se relaciona con un miembro del equipo que asume la mayor parte del trabajo debido a la falta de participación de los demás?</p>
-                    <input type="radio" name="q3" value="compensacion"> Compensación entre proceso y demora
-                    <input type="radio" name="q3" value="limites"> Límites del crecimiento
-                    <input type="radio" name="q3" value="desplazamiento"> Desplazamiento de la carga
-                </div>
-                <div class="question">
-                    <p>4. ¿Qué arquetipo se relaciona con un gobierno que interviene en problemas de seguridad vial después de accidentes graves?</p>
-                    <input type="radio" name="q4" value="compensacion"> Compensación entre proceso y demora
-                    <input type="radio" name="q4" value="limites"> Límites del crecimiento
-                    <input type="radio" name="q4" value="desplazamiento"> Desplazamiento de la carga
-                </div>
-                <div class="question">
-                    <p>5. ¿Qué arquetipo se relaciona con un individuo que abandona la idea de ahorrar después de reducir gradualmente la cantidad ahorrada cada mes?</p>
-                    <input type="radio" name="q5" value="erosion"> Erosión de metas
-                    <input type="radio" name="q5" value="escalada"> Escalada
-                    <input type="radio" name="q5" value="exito"> Éxito para quien tiene éxito
-                </div>
-                <div class="question">
-                    <p>6. ¿Qué arquetipo se relaciona con la competencia entre departamentos por un presupuesto limitado?</p>
-                    <input type="radio" name="q6" value="erosion"> Erosión de metas
-                    <input type="radio" name="q6" value="escalada"> Escalada
-                    <input type="radio" name="q6" value="exito"> Éxito para quien tiene éxito
-                </div>
-                <div class="question">
-                    <p>7. ¿Qué arquetipo se relaciona con la sobrepesca en un lago compartido por varios pescadores?</p>
-                    <input type="radio" name="q7" value="tragedia"> Tragedia del terreno común
-                    <input type="radio" name="q7" value="soluciones"> Soluciones rápidas que fallan
-                    <input type="radio" name="q7" value="crecimiento"> Crecimiento y subinversión
-                </div>
-                <div class="question">
-                    <p>8. ¿Qué arquetipo se relaciona con una empresa que lanza un producto sin investigación de mercado y pruebas adecuadas?</p>
-                    <input type="radio" name="q8" value="tragedia"> Tragedia del terreno común
-                    <input type="radio" name="q8" value="soluciones"> Soluciones rápidas que fallan
-                    <input type="radio" name="q8" value="crecimiento"> Crecimiento y subinversión
-                </div><br><br>
-                <input type="submit" value="Calcular puntuación">
-            </form>
-            <div id="quizResult" class="result"></div>
+    <div class="container">
+        <h1>Relaciona el concepto con su definición</h1>
+        <div class="game-container">
+            <div class="concepts">
+                <div class="concept" draggable="true" data-correct="Sentido común">Habilidades del Pensamiento</div>
+                <div class="concept" draggable="true" data-correct="Puntualidad">Pensamiento Crítico</div>
+                <div class="concept" draggable="true" data-correct="Austeridad">Creatividad</div>
+                <div class="concept" draggable="true" data-correct="Humildad">Metacognición</div>
+                <div class="concept" draggable="true" data-correct="Resiliencia">Desarrollo personal</div>
+                <div class="concept" draggable="true" data-correct="Perseverancia">Aula</div>
+            </div>
+            <div class="descriptions">
+                <div class="description" data-correct="Capacidades mentales que nos permiten procesar información, resolver problemas y tomar decisiones de manera efectiva.">Capacidades mentales que nos permiten procesar información, resolver problemas y tomar decisiones de manera efectiva.</div>
+                <div class="description" data-correct="Evaluar información de manera objetiva.">Evaluar información de manera objetiva.</div>
+                <div class="description" data-correct="Enfrentar situaciones de manera innovadora.">Enfrentar situaciones de manera innovadora.</div>
+                <div class="description" data-correct="Conocer y controlar nuestros procesos mentales.">Conocer y controlar nuestros procesos mentales.</div>
+                <div class="description" data-correct="Meditación y Mindfulness.">Meditación y Mindfulness.</div>
+                <div class="description" data-correct="Aprendizaje Colaborativo.">Aprendizaje Colaborativo.</div>
+            </div>
         </div>
-    </section>    
+        <button id="checkButton">Terminar intento</button>
+        <p id="score"></p>
+        <p id="attempts">Intentos restantes: 2</p>
+    </div>
 
     <footer class="footer">
         <div class="container">

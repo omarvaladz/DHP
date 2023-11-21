@@ -17,9 +17,7 @@ body {
 .navbar-brand {
     display: flex;
     justify-content: center;
-    /* Horizontally center */
     align-items: center;
-    /* Vertically center */
 }
 
 .navbar-brand img {
@@ -37,14 +35,11 @@ body {
 
 #introduction {
     position: relative;
-    /* Change position to relative */
     background-image: url('/img/japan.gif');
-    /* Add your background image path */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 150px 0;
-    /* Adjust padding as needed */
     color: white;
     text-align: center;
     align-items: center;
@@ -58,12 +53,10 @@ body {
 
 #conf {
     position: relative;
-    /* Change position to relative */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 50px 0;
-    /* Adjust padding as needed */
     color: white;
     text-align: center;
     align-items: center;
@@ -82,7 +75,6 @@ body {
     width: 100vw;
     height: 90%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 50%;
     top: 0;
     left: 50%;
@@ -92,12 +84,10 @@ body {
 
 #intro {
     position: relative;
-    /* Change position to relative */
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     padding: 50px 0;
-    /* Adjust padding as needed */
     color: white;
     text-align: center;
     align-items: center;
@@ -116,7 +106,6 @@ body {
     width: 100vw;
     height: 90%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 85%;
     top: 0;
     left: 50%;
@@ -131,7 +120,6 @@ body {
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 50%;
     top: 0;
     left: 50%;
@@ -168,7 +156,6 @@ body {
     width: 100vw;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 85%;
     top: 0;
     left: 50%;
@@ -178,7 +165,6 @@ body {
 
 .btn-lower {
     margin-top: 100px;
-    /* Adjust this value */
 }
 
 .gif-container {
@@ -307,14 +293,12 @@ body {
     background-color: rgba(0, 0, 0, 0.85);
 }
 
-/* Lightbox Navigation Arrows */
 .lb-prev,
 .lb-next {
     color: white;
     font-size: 30px;
 }
 
-/* Lightbox Close Button */
 .lb-close {
     color: white;
     font-size: 35px;
@@ -325,9 +309,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 500px;
-    /* Adjust the height as needed */
     position: relative;
-    /* This is important for positioning the carousel */
 }
 
 .carousel-inner {
@@ -404,17 +386,12 @@ body {
 
     to {
         transform: translateY(-20px);
-        /* La distancia en la que la imagen levita */
     }
 }
 
-/* Estilos para la sección de Ishikawa */
-
-/* Estilos para el modelo de Ishikawa */
 #ishikawa-diagram {
     width: 100%;
     max-width: 800px;
-    /* Ajusta el ancho máximo según tu diseño */
     margin: 0 auto;
     padding: 20px;
     background-color: #fff;
@@ -427,7 +404,6 @@ body {
     margin-bottom: 10px;
 }
 
-/* Estilos para las ramas del modelo de Ishikawa */
 .ishikawa-branch {
     display: flex;
     align-items: center;
@@ -451,20 +427,16 @@ body {
     border-radius: 5px;
     margin-left: 10px;
 }
-
-/* Estilos para los elementos dentro de las ramas */
 .ishikawa-item {
     margin-bottom: 5px;
 }
 
-/* Estilos para los íconos de categoría en las ramas */
 .ishikawa-category-icon {
     font-size: 1.2rem;
     margin-right: 5px;
     color: #007bff;
 }
 
-/* Estilos para el ícono de eliminar rama */
 .delete-branch-icon {
     font-size: 1.2rem;
     color: #ff0000;
@@ -488,7 +460,7 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh; /* Ajusta la altura para centrar verticalmente */
+    height: 100vh;
     margin-top: 100px;
     margin-bottom: 100px;
 }
@@ -556,7 +528,6 @@ body {
     display: none;
 }
 
-/* Estilos para la sección de FODA y CATWDA */
 #foda-catwda {
     background-color: #f0f0f0;
     padding: 20px;
@@ -607,7 +578,6 @@ body {
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 90%;
     top: 0;
     left: 50%;
@@ -631,7 +601,6 @@ body {
     width: 100vw;
     height: 125px;
     background-color: rgba(0, 0, 0, 0.8);
-    /* Dark grey label color */
     opacity: 90%;
     top: 0;
     left: 50%;
@@ -669,23 +638,21 @@ input[type="submit"] {
     border-radius: 10px;
 }
 
-/* Estilos para el rompecabezas */
 #puzzle-container {
     display: grid;
-    grid-template-columns: repeat(5, 120px); /* Divide la imagen en 5 columnas de 120px cada una */
+    grid-template-columns: repeat(5, 120px);
     gap: 5px;
     margin: 20px auto;
-    width: 600px; /* Ajusta el ancho del rompecabezas al tamaño de la imagen original */
+    width: 600px;
 }
 
 .puzzle-piece {
-    width: 120px; /* Ajusta el tamaño de cada pieza del rompecabezas */
-    height: 120px; /* Ajusta el tamaño de cada pieza del rompecabezas */
-    background-size: 600px 600px; /* Ajusta el tamaño de la imagen del rompecabezas al tamaño de la imagen original */
+    width: 120px;
+    height: 120px;
+    background-size: 600px 600px;
     cursor: pointer;
 }
 
-/* Estilos para la imagen original (opcional) */
 #original-image {
     display: block;
     margin: 20px auto;
