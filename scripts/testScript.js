@@ -91,7 +91,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function checkScore() {
         scoreElement.textContent = `Puntuación: ${score} / ${shuffledConcepts.length}`;
 
-        if (score >= 3) {
+        if (score >= 4) {
             scoreElement.textContent += " (Aprobado)";
         } else {
             scoreElement.textContent += " (Reprobado)";
